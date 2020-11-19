@@ -17,10 +17,21 @@ in
 
       dap-mode = {
         enable = true;
-        after = [ "lsp-mode" ];
+        after = [
+          "lsp-mode"
+          # "dap-ui" # enable to fix
+        ];
         command = [ "dap-mode" "dap-auto-configure-mode" ];
         config = ''
           (dap-auto-configure-mode)
+        '';
+      };
+
+      dap-ui = {
+        enable = true;
+        command = [ "dap-ui-mode" ];
+        config = ''
+          (dap-ui-mode t)
         '';
       };
 
